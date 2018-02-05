@@ -42,4 +42,23 @@ https://teamtreehouse.com/library/aspnet-mvc-forms
 @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
 ```
 - You can check if the binding is successful by doing `if (ModelState.IsValid)`
+- *jQuery Validaion* and *Microsoft.JQuery.Unobtrusive.Validation* nuget needed for Jquery client validation and do the following:
 
+```html
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<!-- this library is custom - it highlights the textbox that has errored -->
+<script src="~/Scripts/jquery.validate.bootstrap.js"></script>
+
+<-- must be inside for -->
+@Html.ValidationSummary("The following errors were found:", new { @class = "alert alert-danger" })
+
+```
+```xml
+<!-- in webconfig in root -->
+<appSettings>
+	<add key="UnobtrusiveJavaScriptEnabled" value="true" />
+	<add key="ClientValidationEnabled" value="true" />
+</appSettings>
+```
+- `TempData` is meant to be a very short-lived instance, and you should only use it during the current and the subsequent requests only!
