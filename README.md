@@ -3,6 +3,8 @@
 ASP.NET MVC Forms
 https://teamtreehouse.com/library/aspnet-mvc-forms
 
+![screenshot](https://github.com/sarn1/example-aspnet-mvc-forms/blob/master/screenshot.png)
+
 - [HttpPost] in *EntriesController.cs* is called an attribute.
 - `ModelState` contains the values of the properties with a list of error messages from the model.
 	- With that in mind we can use something like `ModelState["date"].Value.AttemptedValue;` when someone puts in text for a date.
