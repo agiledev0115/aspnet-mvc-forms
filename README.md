@@ -64,3 +64,14 @@ https://teamtreehouse.com/library/aspnet-mvc-forms
 </appSettings>
 ```
 - `TempData` is meant to be a very short-lived instance, and you should only use it during the current and the subsequent requests only!
+
+
+## Notes Revisited
+- All "data" interactions are stored in /data as {Plural form of mode}Repository.
+- `/data/Data.cs` contains the init for the fake database.
+- Interesting use of `enum` for Activity.Type.
+	- Case for `enum` use https://stackoverflow.com/questions/3519429/what-is-main-use-of-enumeration
+- Entries model has good use of DocBlock comments.
+- `ViewBag` object always included to be used to transfer data from controller to view?  See `EntriesController.cs` to `Index.cshtml`
+- `EntriesController.cs` has a GET and POST version of Add.  Uses `SelectList` object for allowing user to select a single item and assigns it to the `ViewBag`.
+- Delete GET checks for null IDs and not found IDs.
